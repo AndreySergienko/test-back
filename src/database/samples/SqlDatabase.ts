@@ -1,6 +1,6 @@
+import { SequelizeModuleOptions } from '@nestjs/sequelize';
 import type { IDatabaseSamples, TDialect } from '../database.types';
 import * as process from 'process';
-import type { SequelizeModuleOptions } from '@nestjs/sequelize';
 import type { ModelCtor } from 'sequelize-typescript';
 
 export default class SqlDatabase implements IDatabaseSamples {

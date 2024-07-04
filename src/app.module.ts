@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { ReportsModule } from './reports/reports.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import SqlDatabase from './database/samples/SqlDatabase';
 import { ConfigModule } from '@nestjs/config';
+import { CustomersModule } from './customers/customers.module';
+import { ManagersModule } from './managers/managers.module';
 
 @Module({
   imports: [
@@ -11,8 +12,11 @@ import { ConfigModule } from '@nestjs/config';
       envFilePath: `.env`,
     }),
     SequelizeModule.forRoot(new SqlDatabase().connect([])),
+    ReportsModule,
+    CustomersModule,
+    ManagersModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
