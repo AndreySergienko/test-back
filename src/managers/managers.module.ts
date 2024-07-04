@@ -8,5 +8,6 @@ import { CustomerToManagerAssign } from './models/customer-manager.model';
   imports: [SequelizeModule.forFeature([Managers, CustomerToManagerAssign])],
   controllers: [],
   providers: [ManagersService],
+  exports: [ManagersService],
 })
 export class ManagersModule {}

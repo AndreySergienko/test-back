@@ -8,6 +8,7 @@ import { ManagersModule } from './managers/managers.module';
 import { Customers } from './customers/models/customers.model';
 import { Managers } from './managers/models/managers.model';
 import { CustomerToManagerAssign } from './managers/models/customer-manager.model';
+import { AppService } from './app.service';
 
 @Module({
   imports: [
@@ -22,6 +23,6 @@ import { CustomerToManagerAssign } from './managers/models/customer-manager.mode
     ManagersModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [AppService],
 })
 export class AppModule {}
